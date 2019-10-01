@@ -16,8 +16,9 @@ import com.bridgelabz.utility.Utility;
 public class BinarySearchWordFromFile {
 	public static void main(String[] args) throws IOException {
 		Utility u1 = new Utility();
-		File f1 = new File("/home/admin1/Desktop/File/BinarySearchWordFromFile.txt"); // Creation of File Descriptor for
-																						// input file
+		File f1 = new File(
+				"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/BinarySearchWordFromFile.txt");
+		// Creation of File Descriptor for input file
 		String[] words = null; // Intialize the word Array
 		FileReader fr = new FileReader(f1); // Creation of File Reader object
 		BufferedReader br = new BufferedReader(fr); // Creation of BufferedReader object

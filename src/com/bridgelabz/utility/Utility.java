@@ -1694,4 +1694,31 @@ public class Utility {
 		// return count array
 		return count;
 	}
+
+	// factorial() will calculate the factorial of given number
+	public static int factorial(int num) {
+		int fact = 1;
+		if (num == 0)
+			return 1;
+		else {
+			while (num > 1) {
+				fact = fact * num;
+				num--;
+			}
+			return fact;
+		}
+	}
+
+	// numOfBST() will calculate the total number of possible BST by calculating
+	// Catalan Number for given key
+	/**
+	 * Purpose : Possibilities of Binary search tree.
+	 * 
+	 * @param i
+	 * @return
+	 */
+	public static int numOfBST(int key) {
+		int catalanNumber = factorial(2 * key) / (factorial(key + 1) * factorial(key));
+		return catalanNumber;
+	}
 }

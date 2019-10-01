@@ -22,8 +22,8 @@ public class UnsortedList {
 
 		Utility u1 = new Utility();
 		LinkedList<String> list = new LinkedList<String>();
-		File f1 = new File("/home/admin1/Desktop/File/unSorted.txt"); // Creation of File Descriptor for
-																		// input file
+		File f1 = new File("/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/unSorted.txt");
+		// input file
 		FileReader fr = new FileReader(f1); // Creation of File Reader object
 		BufferedReader br = new BufferedReader(fr); // Creation of BufferedReader object
 		String str;
@@ -61,7 +61,8 @@ public class UnsortedList {
 			s = s + arr[i] + " ";
 		}
 		list.toString();
-		FileWriter fw = new FileWriter("/home/admin1/Desktop/File/unSortedAns.txt");
+		FileWriter fw = new FileWriter(
+				"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/unSortedAns.txt");
 		fw.write(s);
 		fw.flush();
 		fw.close();

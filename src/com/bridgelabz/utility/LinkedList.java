@@ -94,7 +94,7 @@ public class LinkedList<T> {
 			temp.setNext(n);
 			size++;
 		} else
-			System.out.println("insertion not posiible at position" + index);
+			System.out.println("insertion not posiible at position :" + index);
 	}
 
 	/**
@@ -227,5 +227,30 @@ public class LinkedList<T> {
 			t = t.next;
 		}
 		return false;
+	}
+
+	/**
+	 * Purpose : get method.
+	 * 
+	 * @param i
+	 * @return
+	 */
+	public String get(int position) {
+		// TODO Auto-generated method stub
+		Node new_node = start;
+		int count = 1;
+		if (position == 1) {
+			return  (String) new_node.getData();
+		}
+		T element;
+		while (new_node.next != null) {
+			new_node = new_node.next;
+			count++;
+			if (count == position) {
+				element = (T) new_node.data;
+				return (String) element;
+			}
+		}
+		return null;
 	}
 }

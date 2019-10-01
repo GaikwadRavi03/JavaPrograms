@@ -21,7 +21,7 @@ public class OrderList {
 		Utility u1 = new Utility();
 		LinkedList<Integer> list = new LinkedList<Integer>();
 
-		File f1 = new File("/home/admin1/Desktop/File/OrderList.txt"); // Creation of File Descriptor for // input file
+		File f1 = new File("/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/OrderList.txt");
 		FileReader fr = new FileReader(f1); // Creation of File Reader object
 		BufferedReader br = new BufferedReader(fr); // Creation of BufferedReader object
 
@@ -63,7 +63,7 @@ public class OrderList {
 			}
 			System.out.println("after searching operation list is");
 			list.printList();
-			FileWriter fw = new FileWriter("/home/admin1/Desktop/File/OrderListAns.txt");
+			FileWriter fw = new FileWriter("/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/OrderListAns.txt");
 			fw.write(s);
 			fw.flush();
 			fw.close();
