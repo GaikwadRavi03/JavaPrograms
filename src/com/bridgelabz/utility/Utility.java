@@ -1786,49 +1786,4 @@ public class Utility {
 		return Amount;
 	}
 
-	/**
-	 * Purpose : Hashing Function to search a Number in a slot.
-	 * 
-	 * @param search
-	 * @return
-	 * @throws IOException
-	 */
-	public static boolean hasingSearch(int search) throws IOException {
-		// TODO Auto-generated method stub
-		FileInputStream fis = new FileInputStream(
-				"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/Hashing.txt");
-		HashList<Integer> arr[] = new HashList[11];
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = new HashList<Integer>();
-		}
-		Scanner sc = new Scanner(fis);
-		while (sc.hasNext()) {
-			int value = Integer.parseInt(sc.next());
-
-			int temp_val = value % 11;
-
-			arr[temp_val].add(value);
-		}
-		sc.close();
-		System.out.println();
-
-		int value = search % 11;
-		boolean flag = arr[value].search(search);
-		if (flag) {
-			arr[value].remove(search);
-		} else {
-			arr[value].add(search);
-		}
-
-		FileOutputStream fos = new FileOutputStream(
-				"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/HashingAns.txt");
-		int i = 0;
-		for (i = 0; i < arr.length; i++) {
-			while (!arr[i].isEmpty()) {
-				fos.write((arr[i].pop() + " ").getBytes());
-			}
-		}
-		fis.close();
-		return flag;
-	}
 }
