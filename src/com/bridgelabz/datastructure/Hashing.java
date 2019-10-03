@@ -5,22 +5,24 @@
 **/
 package com.bridgelabz.datastructure;
 
-import com.bridgelabz.utility.Map;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import com.bridgelabz.utility.Utility;
 
 public class Hashing {
 
-	public static void main(String[] args) {
-		Map<Integer, Integer> map = new Map<Integer, Integer>();
-		map.add(77, 77);
-		map.add(44, 44);
-		map.add(99, 99);
-		map.add(12, 12);
-		map.add(34, 34);
-		map.add(17, 17);
-		map.add(96, 96);
-		map.add(25, 25);
-		map.add(27, 27);
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		// TODO Auto-generated method stub
 
-		map.show();
+		Utility input = new Utility();
+		System.out.println("Enter Number To Search");
+		int search = Utility.inputNumber();
+		boolean b = Utility.hasingSearch(search);
+		if (!b) {
+			System.out.println("Number Was Not in List. added to list");
+		} else {
+			System.out.println("Number Deleted From list");
+		}
 	}
 }
