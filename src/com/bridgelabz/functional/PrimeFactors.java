@@ -14,7 +14,7 @@ public class PrimeFactors {
 		try {
 			int n;
 			System.out.println("enter the number:");
-			n = u1.inputNumber();// number given from user.
+			n = Utility.inputNumber();// number given from user.
 			u1.findPrimeFactores(n);// function call.
 		} catch (Exception e) {
 			System.out.println("please enter valid input");

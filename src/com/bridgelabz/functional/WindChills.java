@@ -11,7 +11,7 @@ public class WindChills {
 	public static void main(String args[]) {
 		Utility u1 = new Utility();
 		try {
-			// tempratue and velocity given from user.
+			// Temperate and velocity given from user.
 			double t, v;
 			System.out.println("Enter temperature in fahrenheit : ");
 			t = u1.inputdouble();

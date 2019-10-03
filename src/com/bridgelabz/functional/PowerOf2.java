@@ -14,7 +14,7 @@ public class PowerOf2 {
 		Utility u1 = new Utility();
 		try {
 			System.out.println("enter the no: ");
-			num = u1.inputNumber();// take input from user.
+			num = Utility.inputNumber();// take input from user.
 			u1.powerOfTwo(num);// function call.
 		} catch (Exception e) {
 			System.out.println("please enter valid input");

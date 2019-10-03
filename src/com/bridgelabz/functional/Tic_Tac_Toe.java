@@ -20,6 +20,6 @@ public class Tic_Tac_Toe {
 		// store the name of player 2
 		String name = u1.inputString();
 		// calling this method to play game tictacteo
-		u1.gameTictactoe(name); // function call.
+		Utility.gameTictactoe(name); // function call.
 	}
 }

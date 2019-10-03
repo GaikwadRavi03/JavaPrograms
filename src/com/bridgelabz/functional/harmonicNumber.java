@@ -14,7 +14,7 @@ public class harmonicNumber {
 		try {
 			int n;
 			System.out.println("enter the number:");
-			n = u1.inputNumber();
+			n = Utility.inputNumber();
 			Utility.findHarmonic(n);
 		} catch (Exception e) {
 			System.out.println("please enter valid input");

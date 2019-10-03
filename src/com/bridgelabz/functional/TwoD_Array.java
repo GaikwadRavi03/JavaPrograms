@@ -5,8 +5,6 @@
 **/
 package com.bridgelabz.functional;
 
-import java.util.Scanner;
-
 import com.bridgelabz.utility.Utility;
 
 public class TwoD_Array {

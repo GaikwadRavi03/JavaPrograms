@@ -14,11 +14,11 @@ public class Gambler {
 		try {
 			int stake, goal, trails;// giving values from user
 			System.out.println("enter stakes:");
-			stake = u1.inputNumber();
+			stake = Utility.inputNumber();
 			System.out.println("enter goals: ");
-			goal = u1.inputNumber();
+			goal = Utility.inputNumber();
 			System.out.println("enter no of trails: ");
-			trails = u1.inputNumber();
+			trails = Utility.inputNumber();
 
 			u1.findGambling(stake, goal, trails);// function call
 		} catch (Exception e) {

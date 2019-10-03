@@ -1695,7 +1695,23 @@ public class Utility {
 		return count;
 	}
 
-	// factorial() will calculate the factorial of given number
+	/**
+	 * Purpose : Possibilities of Binary search tree.
+	 * 
+	 * @param i
+	 * @return
+	 */
+	public static int numOfBST(int key) {
+		int catalanNumber = factorial(2 * key) / (factorial(key + 1) * factorial(key));
+		return catalanNumber;
+	}
+
+	/**
+	 * Purpose : factorial() will calculate the factorial of given number.
+	 * 
+	 * @param num
+	 * @return
+	 */
 	public static int factorial(int num) {
 		int fact = 1;
 		if (num == 0)
@@ -1709,16 +1725,58 @@ public class Utility {
 		}
 	}
 
-	// numOfBST() will calculate the total number of possible BST by calculating
-	// Catalan Number for given key
 	/**
-	 * Purpose : Possibilities of Binary search tree.
+	 * Purpose : Simulate Banking Cash Counter.
 	 * 
-	 * @param i
 	 * @return
 	 */
-	public static int numOfBST(int key) {
-		int catalanNumber = factorial(2 * key) / (factorial(key + 1) * factorial(key));
-		return catalanNumber;
+	public static int simulateBanking() {
+		// TODO Auto-generated method stub
+		Utility input = new Utility();
+		Queue<Integer> q = new Queue<>();
+		int Amount = 0;
+		int answer = 0;
+		do {
+			System.out.println("1. Insert Person");
+			System.out.println("2. Remove Person");
+			System.out.println("3. Exit");
+			System.out.println("Enetr your choice:");
+			answer = inputNumber();
+			switch (answer) {
+			case 1:
+				System.out.println("1. Deposit");
+				System.out.println("2. Withdraw");
+
+				int answer2 = inputNumber();
+				if (answer2 == 1) {
+					System.out.println("Enter Amount");
+					int amt = inputNumber();
+					Amount += amt;
+					System.out.println("Amount Added");
+					q.enqueue(amt);
+				} else {
+					System.out.println("Enter Amount");
+					int amt = inputNumber();
+					if (amt > Amount) {
+						System.out.println("Insufficient Balance");
+					} else {
+						Amount -= amt;
+						System.out.println("Amount Deduct");
+					}
+					q.enqueue(amt);
+				}
+				break;
+
+			case 2:
+				if (q.isEmpty()) {
+					System.out.println("No Person In Queue");
+				} else {
+					System.out.println("Person Deleted From Queue");
+					q.dequeue();
+				}
+				break;
+			}
+		} while (answer != 3);
+		return Amount;
 	}
 }

@@ -6,8 +6,6 @@
 
 package com.bridgelabz.functional;
 
-import java.util.Scanner;
-
 import com.bridgelabz.utility.Utility;
 
 public class FlipCoin {
@@ -18,7 +16,7 @@ public class FlipCoin {
 			int times;
 			System.out.println("enter the number of times toss the coin: ");
 			// times given from user.
-			times = u1.inputNumber();
+			times = Utility.inputNumber();
 			u1.tossCoin(times);// fun call
 		} catch (Exception e) {
 			System.out.println("please enter valid input");

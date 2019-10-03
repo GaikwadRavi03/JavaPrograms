@@ -1,3 +1,8 @@
+/*
+* Created by:Ravi Gaikwad.
+* Date 1/10/2019
+* Purpose: 7. Number of Binary Search Tree.
+**/
 package com.bridgelabz.datastructure;
 
 import com.bridgelabz.utility.Utility;

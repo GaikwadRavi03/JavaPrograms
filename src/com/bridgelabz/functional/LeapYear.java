@@ -15,7 +15,7 @@ public class LeapYear {
 		try {
 			int year;
 			System.out.println("enter the year:");
-			year = u1.inputNumber();// year gives from user
+			year = Utility.inputNumber();// year gives from user
 			u1.findLeapYear(year);// function calls
 		} catch (Exception e) {
 			System.out.println("please enter valid input");
