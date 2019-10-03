@@ -32,9 +32,15 @@ public class BinarySearchTree {
 
 	public static void main(String[] args) {
 
-		int n = 5;
-		for (int i = 1; i <= n; i++) {
-			System.out.println(Utility.numOfBST(i));
+		try {
+			int n;
+			System.out.println("Enter the Number for BST");
+			n = Utility.inputNumber();
+			for (int i = 1; i <= n; i++) {
+				System.out.println(Utility.numOfBST(i));
+			}
+		} catch (Exception e) {
+			System.out.println("Enetr valid input");
 		}
 	}
 }

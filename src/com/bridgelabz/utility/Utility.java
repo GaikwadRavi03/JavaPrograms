@@ -1743,7 +1743,11 @@ public class Utility {
 			System.out.println("2. Remove Person");
 			System.out.println("3. Exit");
 			System.out.println("Enetr your choice:");
-			answer = inputNumber();
+			try {
+				answer = inputNumber();
+			} catch (Exception e) {
+				System.out.println("enter valid input");
+			}
 			switch (answer) {
 			case 1:
 				System.out.println("1. Deposit");
