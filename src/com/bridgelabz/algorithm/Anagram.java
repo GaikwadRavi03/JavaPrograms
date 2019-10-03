@@ -5,9 +5,6 @@
 **/
 package com.bridgelabz.algorithm;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 import com.bridgelabz.utility.Utility;
 
 public class Anagram {

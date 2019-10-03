@@ -13,7 +13,7 @@ public class InsertionSortWord {
 		// TODO Auto-generated method stub
 		try {
 			System.out.println("enter the limit of string");
-			int m = u1.inputNumber();
+			int m = Utility.inputNumber();
 			String[] str = new String[m];
 			System.out.println("enter the strings:");
 			for (int i = 0; i <= str.length - 1; i++) {

@@ -6,7 +6,6 @@
 package com.bridgelabz.datastructure;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -27,7 +26,7 @@ public class UnsortedList {
 		FileReader fr = new FileReader(f1); // Creation of File Reader object
 		BufferedReader br = new BufferedReader(fr); // Creation of BufferedReader object
 		String str;
-		String[] words = null; // Intialize the word Array
+		String[] words = null; // Initialize the word Array
 
 		while ((str = br.readLine()) != null) // Reading Content from the file
 		{

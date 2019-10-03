@@ -16,7 +16,6 @@ public class Hashing {
 		// TODO Auto-generated method stub
 
 		try {
-			Utility input = new Utility();
 			System.out.println("Enter Number To Search");
 			int search = Utility.inputNumber();
 			boolean b = Utility.hasingSearch(search);

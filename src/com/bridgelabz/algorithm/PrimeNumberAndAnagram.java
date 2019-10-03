@@ -5,13 +5,10 @@
 **/
 package com.bridgelabz.algorithm;
 
-import java.util.ArrayList;
-
 import com.bridgelabz.utility.Utility;
 
 public class PrimeNumberAndAnagram {
 	public static void main(String[] args) {
-		Utility u1 = new Utility();
-		u1.primeAnagram();// function call fro check prime and anagram.
+		Utility.primeAnagram();// function call for check prime and anagram.
 	}
 }

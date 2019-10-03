@@ -27,16 +27,14 @@ public class VendingMachine {
 				System.out.println(notes[i] + " Notes ---> " + calNotes);
 			}
 			i++;
-			return calculate(money, notes);// Recurtion Method.
+			return calculate(money, notes);// Recursion Method.
 		}
 	}
 
 	public static void main(String[] args) {
-		VendingMachine v1 = new VendingMachine();
-		Utility u1 = new Utility();
 		try {
 			System.out.print("Enter the Amount:");
-			money = u1.inputNumber();
+			money = Utility.inputNumber();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

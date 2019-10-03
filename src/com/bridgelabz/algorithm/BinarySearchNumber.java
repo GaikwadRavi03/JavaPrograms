@@ -22,7 +22,7 @@ public class BinarySearchNumber {
 			int item = u1.inputNumber();
 			u1.binarySearchSort(arr, item);// function call.
 		} catch (Exception e) {
-			System.out.println(e+"please enter valid input");
+			System.out.println("please enter valid input");
 		}
 	}
 }

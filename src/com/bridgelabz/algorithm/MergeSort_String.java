@@ -14,7 +14,7 @@ public class MergeSort_String {
 		Utility u1 = new Utility();
 		try {
 			System.out.println("enter size of string list:");
-			int m = u1.inputNumber();// Gives size of string from user.
+			int m = Utility.inputNumber();// Gives size of string from user.
 			String str[] = new String[m];
 			System.out.println("enter strings in array");// store varibale in string array
 			for (int i = 0; i < str.length; i++) {
@@ -32,7 +32,7 @@ public class MergeSort_String {
 				System.out.print(i + " ");
 			}
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println("Please Enter valid input");
 		}
 	}
 }

@@ -13,7 +13,7 @@ public class Binary {
 		try {
 			int num;
 			System.out.println("enter the number:");
-			num = u1.inputNumber();// number take from user.
+			num = Utility.inputNumber();// number take from user.
 			u1.FindBinaryRepresentation(num);// function call.
 		} catch (Exception e) {
 			System.out.println("please enter only numbers");

@@ -14,11 +14,11 @@ public class bubbleSortInteger {
 		try {
 			Utility u1 = new Utility();
 			System.out.println("enter the size of array list");
-			int m = u1.inputNumber();
+			int m = Utility.inputNumber();
 			int arr[] = new int[m];
 			System.out.println("enter the numbers in list");
 			for (int i = 0; i < arr.length; i++) {
-				arr[i] = u1.inputNumber();
+				arr[i] = Utility.inputNumber();
 			}
 			System.out.println("before the bubble sort:");
 			for (int i = 0; i < arr.length; i++) {

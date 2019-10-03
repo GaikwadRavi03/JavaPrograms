@@ -12,12 +12,8 @@ public class PrimeAnagramUsingStack {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		com.bridgelabz.utility.Stack<Integer> s1 = Utility.primeAnagramStack();
-
 		while (!s1.isEmpty()) {
-
 			System.out.println(s1.pop());
 		}
-
 	}
-
 }

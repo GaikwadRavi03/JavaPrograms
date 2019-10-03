@@ -13,7 +13,7 @@ public class SwapNibbles {
 
 		Utility u1 = new Utility();
 		System.out.println("Enter the number: ");
-		int n = u1.inputNumber();// gives input from user.
+		int n = Utility.inputNumber();// gives input from user.
 		u1.findSwapNibble(n);// function call for swap nibble.
 	}
 }
