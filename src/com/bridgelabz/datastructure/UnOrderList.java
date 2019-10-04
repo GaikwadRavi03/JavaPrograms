@@ -16,7 +16,7 @@ import com.bridgelabz.utility.LinkedList;
 import com.bridgelabz.utility.Node;
 import com.bridgelabz.utility.Utility;
 
-public class UnsortedList {
+public class UnOrderList {
 
 	public static void main(String[] args) throws IOException {
 
@@ -43,7 +43,7 @@ public class UnsortedList {
 		boolean flag = false;
 		for (int i = 0; i < words.length; i++) {
 			if (item.equals((words[i]))) {
-				list.DeleteAtPosition(i);
+				list.DeleteAtPosition(i + 1);
 				flag = true;
 				break;
 			}

@@ -135,15 +135,15 @@ public class LinkedList<T> {
 	public void DeleteAtPosition(int index) {
 		if (start == null)
 			System.out.println("list is already empty");
-		else if (index < 0 || index > size)
+		else if (index < 1 || index > size)
 			System.out.println("Invalid index");
-		else if (index == 0)
+		else if (index == 1)
 			DeleteFirst();
-		else if (index == size - 1)
+		else if (index == size)
 			DeleteLast();
 		else {
 			Node<T> temp = start;
-			for (int i = 0; i < index - 1; i++) {
+			for (int i = 1; i < index - 1; i++) {
 				temp = temp.getNext();
 			}
 			Node<T> temp2 = temp.getNext();
@@ -219,12 +219,12 @@ public class LinkedList<T> {
 	 * @param word
 	 * @return
 	 */
-	public boolean search(int word) {
-		Node t = start;
-		while (t != null) {
-			if ((int) t.data == word)
+	public boolean search(int num) {
+		Node temp = start;
+		while (temp != null) {
+			if ((int) temp.data == num)
 				return true;
-			t = t.next;
+			temp = temp.next;
 		}
 		return false;
 	}
@@ -240,7 +240,7 @@ public class LinkedList<T> {
 		Node new_node = start;
 		int count = 1;
 		if (position == 1) {
-			return  (String) new_node.getData();
+			return (String) new_node.getData();
 		}
 		T element;
 		while (new_node.next != null) {
@@ -252,5 +252,31 @@ public class LinkedList<T> {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Purpose : Delete at position for Hashing class
+	 * 
+	 * @param index
+	 */
+	public void DeleteAtPositionHashing(int index) {
+		if (start == null)
+			System.out.println("list is already empty");
+		else if (index < 0 || index > size)
+			System.out.println("Invalid index");
+		else if (index == 0)
+			DeleteFirst();
+		else if (index == size)
+			DeleteLast();
+		else {
+			Node<T> temp = start;
+			for (int i = 0; i < index - 1; i++) {
+				temp = temp.getNext();
+				System.out.println(temp.data);
+			}
+			Node<T> temp2 = temp.getNext();
+			temp.setNext(temp2.getNext());
+			size--;
+		}
 	}
 }

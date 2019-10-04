@@ -35,7 +35,7 @@ public class OrderList {
 			for (int i = 0; i < arr1.length; i++) {
 				arr2[i] = Integer.parseInt(arr1[i]);
 				System.out.print(arr1[i] + " "); // data from file
-				list.insertAtPosition(i, arr2[i]); // insert data in asending oder
+				list.insertAtLast(arr2[i]); // insert data
 			}
 		}
 		list.sort(list);
@@ -44,16 +44,20 @@ public class OrderList {
 
 		try {
 			System.out.println("\nsearch the element:");
-			int item = u1.inputNumber();
+			int item = Utility.inputNumber();
 
 			if (list.search(item)) {
-				list.DeleteAtPosition(item - 1);
+				list.DeleteAtPosition(item);
+
 			} else {
 				list.insertAtSpecificPosition(item);
 			}
 
+			System.out.println("after searching operation list is");
+			list.printList();
+
 			String s = "";
-			int n = list.getListSize() + 1;
+			int n = list.getListSize()+1;
 			int[] arr = new int[n];
 			Node<Integer> temp = list.start;
 			for (int i = 0; i < n; i++) {
@@ -61,14 +65,14 @@ public class OrderList {
 				temp = temp.getNext();
 				s = s + arr[i] + " ";
 			}
-			System.out.println("after searching operation list is");
-			list.printList();
-			FileWriter fw = new FileWriter("/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/OrderListAns.txt");
+
+			FileWriter fw = new FileWriter(
+					"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/OrderListAns.txt");
 			fw.write(s);
 			fw.flush();
 			fw.close();
 		} catch (Exception e) {
-			System.out.println("enter valid input");
+			System.out.println("Please Enter valid input");
 		}
 	}
 }
