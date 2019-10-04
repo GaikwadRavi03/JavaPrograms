@@ -38,7 +38,7 @@ public class OrderList {
 				list.insertAtLast(arr2[i]); // insert data
 			}
 		}
-		list.sort(list);
+		LinkedList.sort(list);
 		System.out.println("\nsorted linked list from data is");
 		list.printList();
 

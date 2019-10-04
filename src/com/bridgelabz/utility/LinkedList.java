@@ -42,6 +42,21 @@ public class LinkedList<T> {
 	}
 
 	/**
+	 * Purpose : store data in string.
+	 * 
+	 * @return
+	 */
+	public String returnListInString() {
+		String str = "";
+		Node<T> temp = start;
+		while (temp != null) {
+			str += temp.getData() + " ";
+			temp = temp.getNext();
+		}
+		return str;
+	}
+
+	/**
 	 * Purpose : insert Node at First Position in Linked List.
 	 * 
 	 * @param val
@@ -279,4 +294,29 @@ public class LinkedList<T> {
 			size--;
 		}
 	}
+
+	public void DeleteFirstHashing() {
+		if (start == null)
+			System.out.println("list is already empty:");
+		else {
+			start = start.getNext();
+			size--;
+		}
+	}
+
+	public void DeleteLastHashing() {
+		if (start == null)
+			System.out.println("list is already empty:");
+		else if (size == 1) {
+			start = null;
+			size--;
+		} else {
+			Node<T> temp = start;
+			for (int i = 1; i < size - 1; i++)
+				temp = temp.getNext();
+			temp.setNext(null);
+			size--;
+		}
+	}
+
 }

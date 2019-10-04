@@ -53,30 +53,41 @@ public class Hashing {
 
 		System.out.print("\n\nEnter the search element");
 		int item = Utility.inputNumber();
-
+		int j1 = 0;
+		boolean isFoundKey = false;
+		int index = 0;
 		for (int i = 0; i < list.length; i++) {
-			rem = item % arr1.length;
+			rem = item % 11;
 			for (int j = 0; j < list[i].getListSize() - 1; j++) {
 				if (list[rem].search(item)) {
-					list[rem].DeleteAtPositionHashing(j);
+					isFoundKey = true;
+					index = j1;
+					break;
 				}
+				j1++;
 			}
+
+		}
+		if (isFoundKey) {
+			list[rem].DeleteAtPositionHashing(j1);
+		} else {
 			list[rem].insertAtLast(item);
-			break;
 		}
 		System.out.print("\nAfter searching operation Array Linked list is");
 		for (int i = 0; i < arr1.length; i++) {
 			System.out.print("\n" + i + " : ");
 			list[i].printList();
 		}
+		String out = "";
 		System.out.println("\noutput in writer file");
 		for (int i = 0; i < list.length; i++) {
 			list[i].printList();
+			out += list[i].returnListInString();
 		}
 
 		FileWriter fw = new FileWriter(
 				"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/Hashing Ans.txt");
-		fw.write(list.toString().toString());
+		fw.write(out);
 		fw.flush();
 		fw.close();
 	}
