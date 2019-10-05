@@ -58,18 +58,17 @@ public class Hashing {
 		int index = 0;
 		for (int i = 0; i < list.length; i++) {
 			rem = item % 11;
-			for (int j = 0; j < list[i].getListSize() - 1; j++) {
-				if (list[rem].search(item)) {
+			for (int j = 0; j < list[rem].getListSize(); j++) {
+
+				if (String.valueOf(list[rem].getObject(j)).contentEquals(String.valueOf(item))) {
 					isFoundKey = true;
-					index = j1;
+					index = j;
 					break;
 				}
-				j1++;
 			}
-
 		}
 		if (isFoundKey) {
-			list[rem].DeleteAtPositionHashing(j1);
+			list[rem].DeleteAtPositionHashing(index);
 		} else {
 			list[rem].insertAtLast(item);
 		}

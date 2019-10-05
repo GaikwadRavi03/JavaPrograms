@@ -14,7 +14,6 @@ public class PrimeNumberAndAnagram2DArray {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Utility u1 = new Utility();
 		String string1 = "";
 		String string2 = "";
 		int count = 0;
@@ -29,7 +28,7 @@ public class PrimeNumberAndAnagram2DArray {
 			for (int j = i + 1; j < prime.size(); j++) {
 				string1 = Integer.toString(prime.get(i)); // string value convert to Integer and
 				string2 = Integer.toString(prime.get(j));
-				if (u1.CheckAnagram(string1, string2)) // check the string is equal or not
+				if (Utility.CheckAnagram(string1, string2)) // check the string is equal or not
 				{
 					anagram[count][0] = string1;
 					anagram[count][1] = string2;

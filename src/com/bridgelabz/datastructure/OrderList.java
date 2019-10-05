@@ -18,7 +18,6 @@ import com.bridgelabz.utility.Utility;
 public class OrderList {
 	public static void main(String[] args) throws IOException {
 
-		Utility u1 = new Utility();
 		LinkedList<Integer> list = new LinkedList<Integer>();
 
 		File f1 = new File("/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/OrderList.txt");

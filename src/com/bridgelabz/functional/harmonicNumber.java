@@ -9,8 +9,6 @@ import com.bridgelabz.utility.Utility;
 
 public class harmonicNumber {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Utility u1 = new Utility();
 		try {
 			int n;
 			System.out.println("enter the number:");

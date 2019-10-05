@@ -14,6 +14,5 @@ public class CalenderUsingStack {
 		int month = Integer.parseInt(args[0]);
 		int year = Integer.parseInt(args[1]);
 		Utility.calenderStack(month, year);
-		// System.out.println("Hello");
 	}
 }

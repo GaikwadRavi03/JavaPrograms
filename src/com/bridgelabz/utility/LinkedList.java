@@ -270,7 +270,7 @@ public class LinkedList<T> {
 	}
 
 	/**
-	 * Purpose : Delete at position for Hashing class
+	 * Purpose : Delete at position for Hashing Program
 	 * 
 	 * @param index
 	 */
@@ -295,28 +295,46 @@ public class LinkedList<T> {
 		}
 	}
 
-	public void DeleteFirstHashing() {
-		if (start == null)
-			System.out.println("list is already empty:");
-		else {
-			start = start.getNext();
-			size--;
+	/**
+	 * Purpose : Find item in Linked list and return of this index position.
+	 * 
+	 * @param index
+	 * @return
+	 */
+	public T getObject(int index) {
+		// TODO Auto-generated method stub
+		checkElementIndex(index);
+		Node<T> temp = start;
+		for (int i = 0; i < size; i++) {
+			if (index == i) {
+				return temp.getData();
+			}
+			temp = temp.getNext();
+		}
+		return (T) temp;
+
+	}
+
+	/**
+	 * Purpose : Find index of element.
+	 * 
+	 * @param index
+	 */
+	private void checkElementIndex(int index) {
+		// TODO Auto-generated method stub
+		if (!isElementIndex(index)) {
+			System.out.println("IndexOutOfBoundsException");
 		}
 	}
 
-	public void DeleteLastHashing() {
-		if (start == null)
-			System.out.println("list is already empty:");
-		else if (size == 1) {
-			start = null;
-			size--;
-		} else {
-			Node<T> temp = start;
-			for (int i = 1; i < size - 1; i++)
-				temp = temp.getNext();
-			temp.setNext(null);
-			size--;
-		}
+	/**
+	 * Purpose : check the Element is in Particular index position.
+	 * 
+	 * @param index
+	 * @return
+	 */
+	private boolean isElementIndex(int index) {
+		// TODO Auto-generated method stub
+		return index >= 0 && index < size;
 	}
-
 }

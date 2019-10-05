@@ -19,7 +19,7 @@ public class BinarySearchNumber {
 				System.err.print(arr[i] + " ");// unsorted or original list prints here
 			}
 			System.out.println("enter the item to find:");
-			int item = u1.inputNumber();
+			int item = Utility.inputNumber();
 			u1.binarySearchSort(arr, item);// function call.
 		} catch (Exception e) {
 			System.out.println("please enter valid input");
