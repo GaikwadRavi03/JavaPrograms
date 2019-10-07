@@ -9,7 +9,7 @@ public class Deque<E extends Comparable<E>> implements Comparator<E> {
 	int size = 0;
 
 	private class Node<V> {
-		private V element;
+		private V data;
 		private Node<V> next;
 		private Node<V> prev;
 	}
@@ -19,16 +19,16 @@ public class Deque<E extends Comparable<E>> implements Comparator<E> {
 	 * 
 	 * @param element
 	 */
-	public void addFront(E element) {
+	public void addFront(E data) {
 		if (start == null) {
 			Node<E> temp = new Node<E>();
-			temp.element = element;
+			temp.data = data;
 			start = temp;
 			end = temp;
 			size++;
 		} else {
 			Node<E> temp = new Node<E>();
-			temp.element = element;
+			temp.data = data;
 			start.prev = temp;
 			temp.next = start;
 			temp.prev = null;
@@ -42,10 +42,10 @@ public class Deque<E extends Comparable<E>> implements Comparator<E> {
 	 * 
 	 * @param element
 	 */
-	public void addRear(E element) {
+	public void addRear(E data) {
 		if (end == null) {
 			Node<E> temp = new Node<E>();
-			temp.element = element;
+			temp.data = data;
 			temp.next = null;
 			temp.prev = null;
 			start = temp;
@@ -53,7 +53,7 @@ public class Deque<E extends Comparable<E>> implements Comparator<E> {
 			size++;
 		} else {
 			Node<E> temp = new Node<E>();
-			temp.element = element;
+			temp.data = data;
 			end.next = temp;
 			temp.prev = end;
 			temp.next = null;
@@ -72,7 +72,7 @@ public class Deque<E extends Comparable<E>> implements Comparator<E> {
 			Node<E> temp = end;
 			end = end.prev;
 			size--;
-			return temp.element;
+			return temp.data;
 		}
 		return null;
 
@@ -88,7 +88,7 @@ public class Deque<E extends Comparable<E>> implements Comparator<E> {
 			Node<E> temp = start;
 			start = start.next;
 			size--;
-			return temp.element;
+			return temp.data;
 		}
 		return null;
 

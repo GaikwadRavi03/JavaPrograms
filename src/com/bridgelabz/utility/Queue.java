@@ -7,12 +7,11 @@ public class Queue<E> {
 	private int size = 0;
 
 	private class Node<V> {
-		private V element;
+		private V data;
 		private Node<V> next;
 	}
 
 	public Queue() {
-
 	}
 
 	/**
@@ -20,17 +19,17 @@ public class Queue<E> {
 	 * 
 	 * @param element
 	 */
-	public void enqueue(E element) {
+	public void enqueue(E data) {
 		if (end == null) {
-			Node<E> temp = new Node<E>();
-			temp.element = element;
-			start = end = temp;
+			Node<E> n = new Node<E>();
+			n.data = data;
+			start = end = n;
 			size++;
 			return;
 		}
 		end.next = new Node<E>();
 		end = end.next;
-		end.element = element;
+		end.data = data;
 		size++;
 	}
 
@@ -46,8 +45,7 @@ public class Queue<E> {
 		Node<E> temp = start;
 		start = start.next;
 		size--;
-		return temp.element;
-
+		return temp.data;
 	}
 
 	/**

@@ -65,5 +65,6 @@ public class UnOrderList {
 		fw.write(s);
 		fw.flush();
 		fw.close();
+		br.close();
 	}
 }

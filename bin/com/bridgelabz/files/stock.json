@@ -1,0 +1,22 @@
+{
+	"Stock": [
+		{
+			"stockName": "Mahindra",
+                        "stocksymbol" :"@",
+			"numberofShare": 19,
+			"sharePrice": 786
+		},
+		{
+			"stockName": "TATA    ",
+                        "stocksymbol" :"$",
+			"numberofShare": 37,
+			"sharePrice": 940
+		},
+		{
+			"stockName": "Reliance",
+                        "stocksymbol" :"#",
+			"numberofShare": 68,
+			"sharePrice": 2356
+		}
+	]
+}

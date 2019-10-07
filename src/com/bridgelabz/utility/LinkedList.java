@@ -235,7 +235,7 @@ public class LinkedList<T> {
 	 * @return
 	 */
 	public boolean search(int num) {
-		Node temp = start;
+		Node<?> temp = start;
 		while (temp != null) {
 			if ((int) temp.data == num)
 				return true;
@@ -252,7 +252,7 @@ public class LinkedList<T> {
 	 */
 	public String get(int position) {
 		// TODO Auto-generated method stub
-		Node new_node = start;
+		Node<?> new_node = start;
 		int count = 1;
 		if (position == 1) {
 			return (String) new_node.getData();

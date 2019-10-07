@@ -1,10 +1,22 @@
 package com.bridgelabz.utility;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import com.bridgelabz.oops.Stock;
 
 public class Utility {
 
@@ -13,12 +25,16 @@ public class Utility {
 	 */
 	static Scanner sc = new Scanner(System.in);
 
+	public static long inputLong() {
+		return sc.nextLong();
+	}
+
 	public static int inputNumber() {
 		return sc.nextInt();
 	}
 
-	public String inputString() {
-		return sc.next();
+	public static String inputString() {
+		return sc.nextLine();
 	}
 
 	public double inputdouble() {
@@ -325,6 +341,7 @@ public class Utility {
 		String[] board = new String[9];
 		String turn = "X"; // player Turn
 		String winner = null; // to check who is win.
+		@SuppressWarnings("unused")
 		String player2; // name of player 2
 
 		// calling this method to load the board instruction
@@ -631,7 +648,6 @@ public class Utility {
 						pnum = pnum / 10;
 					}
 					if (temp == rev) {
-						int anum = num;
 						System.out.println("prime & palindrome :" + num);
 					} else {
 						System.out.print("");
@@ -1179,7 +1195,7 @@ public class Utility {
 	public void simpleBalanceParenthesis(String str) {
 		// TODO Auto-generated method stub
 		// use stack
-		Stack<Integer> stk = new Stack<Integer>();
+		Stack<Integer> stk = new Stack<>();
 		int n = str.length();
 		for (int i = 0; i < n; i++) {
 			char ch = str.charAt(i);
@@ -1187,6 +1203,7 @@ public class Utility {
 				stk.push(i);
 			else if (ch == ')') {
 				try {
+					@SuppressWarnings("unused")
 					int p = stk.pop() + 1;
 					System.out.println("balanced");
 				} catch (Exception e) {
@@ -1404,11 +1421,11 @@ public class Utility {
 	 * @param s
 	 * @return (boolean)
 	 */
-	public static boolean palindromeChecker(String s) {
+	public static boolean palindromeChecker(String str) {
 		Deque<Character> D = new Deque<>();
 		int index = 0;
-		while (index < s.length()) {
-			D.addRear(s.charAt(index));
+		while (index < str.length()) {
+			D.addRear(str.charAt(index));
 			index++;
 		}
 		while (D.size() > 1) {
@@ -1468,7 +1485,6 @@ public class Utility {
 				if (j == i || x2 <= 9) {
 					continue;
 				}
-				int x2value = x2;
 				int count2 = 0;
 				while (x2 > 0) {
 					int temp2 = x2 % 10;
@@ -1543,7 +1559,6 @@ public class Utility {
 				if (j == i || x2 <= 9) {
 					continue;
 				}
-				int x2value = x2;
 				int count2 = 0;
 				while (x2 > 0) {
 					int temp2 = x2 % 10;
@@ -1708,16 +1723,21 @@ public class Utility {
 	 * @return
 	 */
 	public static int factorial(int num) {
+//		int fact = 1;
+//		if (num == 0)
+//			return 1;
+//		else {
+//			while (num > 1) {
+//				fact = fact * num;
+//				num--;
+//			}
+//			return fact;
+//		}
 		int fact = 1;
-		if (num == 0)
-			return 1;
-		else {
-			while (num > 1) {
-				fact = fact * num;
-				num--;
-			}
-			return fact;
+		for (int i = 1; i <= num; i++) {
+			fact *= i;
 		}
+		return fact;
 	}
 
 	/**
@@ -1727,17 +1747,17 @@ public class Utility {
 	 */
 	public static int simulateBanking() {
 		Queue<Integer> q = new Queue<>();
-		int Amount = 0;
+		int amount = 0;
 		int answer = 0;
 		do {
 			System.out.println("1. Insert Person");
 			System.out.println("2. Remove Person");
 			System.out.println("3. Exit");
-			System.out.println("Enetr your choice:");
+			System.out.println("Enter your choice:");
 			try {
 				answer = inputNumber();
 			} catch (Exception e) {
-				System.out.println("enter valid input");
+				System.out.println("Enter valid input");
 			}
 			switch (answer) {
 			case 1:
@@ -1748,17 +1768,17 @@ public class Utility {
 				if (answer2 == 1) {
 					System.out.println("Enter Amount");
 					int amt = inputNumber();
-					Amount += amt;
-					System.out.println("Amount Added");
+					amount += amt;
+					System.out.println(amt + " :Amount Added");
 					q.enqueue(amt);
 				} else {
 					System.out.println("Enter Amount");
 					int amt = inputNumber();
-					if (amt > Amount) {
+					if (amt > amount) {
 						System.out.println("Insufficient Balance");
 					} else {
-						Amount -= amt;
-						System.out.println("Amount Deduct");
+						amount -= amt;
+						System.out.println(amt + " :Amount Deduct");
 					}
 					q.enqueue(amt);
 				}
@@ -1774,7 +1794,7 @@ public class Utility {
 				break;
 			}
 		} while (answer != 3);
-		return Amount;
+		return amount;
 	}
 
 	/**
@@ -1825,6 +1845,323 @@ public class Utility {
 			}
 			System.out.println();
 		}
+	}
+
+	/**
+	 * ---------------------------------------------------------------
+	 * --------------------Object Oriented Programs-----------------------
+	 * ----------------------------------------------------------------
+	 */
+
+	/**
+	 * Purpose : Read And Write in Json file.
+	 * 
+	 * @throws org.json.simple.parser.ParseException
+	 * @throws ParseException
+	 */
+	@SuppressWarnings("unchecked")
+	public static void jsonFileRead() {
+		try {
+			FileReader file = new FileReader(
+					"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/Inventory.json");
+			JSONParser parser = new JSONParser();
+			JSONObject obj = (JSONObject) parser.parse(file);
+			JSONArray jsonarr = (JSONArray) obj.get("inventory");
+
+			jsonarr.stream().forEach(item -> System.out.println(item));
+			jsonarr.stream().forEach(i -> {
+				JSONObject s = (JSONObject) i;
+				int p = (int) ((Long) s.get("Price")).intValue();
+				int w = (int) ((Long) s.get("Weight")).intValue();
+
+				System.out.println("Total Of " + s.get("type") + " :" + (p * w));
+			});
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Purpose : Replace data using Regex.
+	 * 
+	 * @param string
+	 */
+	public static void regexExp(String string) {
+		// accept the data from user
+		System.out.println("Enter User name:");
+		String uname = Utility.inputString();
+
+		System.out.println("Enter Full name:");
+		String fullname = Utility.inputString();
+
+		System.out.println("Enter contact number:");
+		long mob = Utility.inputLong();
+
+		// display the current date
+		String date = Utility.currentDateTime();
+
+		// check the pattern and match the string
+		string = Utility.convertString(string, "<<name>>", uname);
+		string = Utility.convertString(string, "<<full name>>", fullname);
+		string = Utility.convertString(string, "xxxxxxxxxx", String.valueOf(mob));
+		string = Utility.convertString(string, "XX/XX/XXXX", date);
+		// Display string
+		System.out.println("" + string);
+	}
+
+	/**
+	 * Purpose : Get Current date and time.
+	 * 
+	 * @return
+	 */
+	public static String currentDateTime() {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
+		return dateFormat.format(date); // 2016/11/16 12:08:43
+	}
+
+	/**
+	 * Purpose : convert string.
+	 * 
+	 * @param message
+	 * @param change
+	 * @param requried
+	 * @return
+	 */
+	public static String convertString(String message, String change, String requried) {
+		Pattern p = Pattern.compile(change);
+		Matcher m = p.matcher(message);
+		message = m.replaceAll(requried);
+		return message;
+	}
+
+	/**
+	 * Purpose : Distribute the cards.
+	 * 
+	 * @return
+	 */
+	public static String[][] cardDistribute() {
+		// TODO Auto-generated method stub
+		String arr[][] = new String[4][13];
+		cardInsert(arr);
+		cardShuffle(arr);
+
+		String playercard[][] = new String[4][9];
+		for (int i = 0; i < playercard.length; i++) {
+			for (int j = 0; j < playercard[i].length; j++) {
+				playercard[i][j] = arr[i][j];
+			}
+		}
+		return playercard;
+	}
+
+	/**
+	 * Purpose : Insert the cards in Array.
+	 * 
+	 * @param arr
+	 */
+	private static void cardInsert(String[][] arr) {
+		// TODO Auto-generated method stub
+		String Suits[] = { "Clubs", "Diamonds", "Hearts", "Spades" };
+		String Rank[] = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "King", "Queen", "Ace" };
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = Suits[i] + " " + Rank[j];
+			}
+		}
+	}
+
+	/**
+	 * Purpose : Shuffle the cards Randomly.
+	 * 
+	 * @param arr
+	 */
+	private static void cardShuffle(String[][] arr) {
+		// TODO Auto-generated method stub
+		Random r1 = new Random();
+		for (int i = 0; i < 150; i++) {
+			int x1 = r1.nextInt(4);
+			int x2 = r1.nextInt(13);
+			int x3 = r1.nextInt(4);
+			int x4 = r1.nextInt(13);
+			swap(arr, x1, x2, x3, x4);
+
+		}
+	}
+
+	/**
+	 * Purpose : Exchange the cards.
+	 * 
+	 * @param arr
+	 * @param x1
+	 * @param x2
+	 * @param x3
+	 * @param x4
+	 */
+	private static void swap(String[][] arr, int x1, int x2, int x3, int x4) {
+		// TODO Auto-generated method stub
+		String temp = arr[x1][x2];
+		arr[x1][x2] = arr[x3][x4];
+		arr[x3][x4] = temp;
+	}
+
+	/**
+	 * Purpose : Deck Of cards using Queue.
+	 * 
+	 * @param playercard
+	 * @return
+	 */
+	public static Queue<Queue<String>> cardSort(String playercard[][]) {
+		Queue<Queue<String>> sortedcard = new Queue<>();
+
+		String rank[] = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace" };
+		int arr[] = new int[9];
+		int index = 0;
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 9; j++) {
+
+				String temp[] = (playercard[i][j] + " ").split(" ");
+				for (int k = 0; k < 13; k++) {
+					if (temp[1].equals(rank[k])) {
+
+						arr[index] = k;
+						index++;
+					}
+				}
+			}
+			System.out.println();
+			index = 0;
+			for (int k1 = 0; k1 < arr.length - 1; k1++) {
+				for (int k2 = k1 + 1; k2 < arr.length; k2++) {
+					if (arr[k1] > arr[k2]) {
+						int temp = arr[k1];
+						arr[k1] = arr[k2];
+						arr[k2] = temp;
+
+						String temp1 = playercard[i][k1];
+						playercard[i][k1] = playercard[i][k2];
+						playercard[i][k2] = temp1;
+
+					}
+				}
+			}
+		}
+
+		for (int i = 0; i < playercard.length; i++) {
+			Queue<String> temp = new Queue<>();
+			for (int j = 0; j < playercard[i].length; j++) {
+				temp.enqueue(playercard[i][j]);
+			}
+			sortedcard.enqueue(temp);
+		}
+		return sortedcard;
+	}
+
+	/**
+	 * Purpose : Method to create new stock from json-object read from json file.
+	 * 
+	 * @param json
+	 * @return
+	 */
+	public static Stock createStock(JSONObject json) {
+		String stockName = (String) json.get("stockName");
+		long numberofShare = Long.valueOf(json.get("numberofShare").toString());
+		long sharePrice = Long.valueOf(json.get("sharePrice").toString());
+		Stock stock = new Stock(stockName, numberofShare, sharePrice);
+		return stock;
+	}
+
+	/**
+	 * Purpose : Method to printStockReport (Each stock-name,number of shares,
+	 * Price-Per-Share and StockValue of each stock )
+	 * 
+	 * @param stock
+	 */
+	public static void printStockReport(Stock[] stock) {
+		System.out.println("  Stock-Name       Number-Of-Shares    Price-Per-Share        StockValue    ");
+		System.out.println("-----------------------------------------------------------------------------");
+		for (int i = 0; i < stock.length; i++) {
+			System.out.println("  " + stock[i].stockName + "              " + stock[i].numberofShare
+					+ "                  " + stock[i].sharePrice + "                  " + valueOfStock(stock[i]));
+
+		}
+	}
+
+	/**
+	 * Purpose : Method to calculate value of Particular Stock.
+	 * 
+	 * @param stock
+	 * @return
+	 */
+	public static double valueOfStock(Stock stock) {
+		return stock.numberofShare * stock.sharePrice;
+	}
+
+	/**
+	 * Purpose : Method to calculate Total value of Stocks(sum of all stock values)
+	 * 
+	 * @param stock
+	 * @return
+	 */
+	public static double getTotalStockValue(Stock[] stock) {
+		// TODO Auto-generated method stub
+		double totalStockValue = 0.0;
+		for (int i = 0; i < stock.length; i++) {
+			totalStockValue = totalStockValue + valueOfStock(stock[i]);
+
+		}
+		return totalStockValue;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static void JsonFileReadAndWrite() {
+		// TODO Auto-generated method stub
+		try {
+			FileReader file = new FileReader(
+					"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/InventoryManagement.json");
+			JSONParser parser = new JSONParser();
+			JSONObject obj = (JSONObject) parser.parse(file);
+			JSONArray jsonarr = (JSONArray) obj.get("inventory");
+
+			jsonarr.stream().forEach(item -> System.out.println(item));
+			jsonarr.stream().forEach(i -> {
+				JSONObject s = (JSONObject) i;
+				int p = ((Long) s.get("Price")).intValue();
+				int w = ((Long) s.get("Weight")).intValue();
+
+				System.out.println("Total Price Of " + s.get("Name") + " " + s.get("type") + " :" + (p * w));
+			});
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void stockPortPolio() throws IOException, ParseException {
+		// TODO Auto-generated method stub
+
+		Stock[] stock; // Array to hold list of stocks
+
+		JSONParser parser = new JSONParser();
+		// Reading stock details from
+		FileReader file = new FileReader(
+				"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/stock.json");
+		JSONObject json = (JSONObject) parser.parse(file);
+		JSONArray jsonarr = (JSONArray) json.get("Stock");
+		stock = new Stock[jsonarr.size()];
+		for (int i = 0; i < jsonarr.size(); i++) {
+			// Creating stock object from json-object
+			Stock st = Utility.createStock((JSONObject) jsonarr.get(i));
+			stock[i] = st; // Storing each stock in array
+		}
+		// Printing Stock-report
+		Utility.printStockReport(stock);
+		System.out.println("\n:::::::Total Stock Value::::::::");
+		System.out.println("         " + Utility.getTotalStockValue(stock));
 	}
 
 }

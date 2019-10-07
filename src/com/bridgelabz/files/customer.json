@@ -1,0 +1,32 @@
+[
+   {
+      "ShareCount":151,
+      "Balance":340,
+      "Name":"alex"
+   },
+   {
+      "ShareCount":80,
+      "Balance":6098,
+      "Name":"jack"
+   },
+   {
+      "ShareCount":115,
+      "Balance":8000,
+      "Name":"Roman"
+   },
+   {
+      "ShareCount":100,
+      "Balance":10000,
+      "Name":"tom"
+   },
+   {
+      "ShareCount":100,
+      "Balance":10000,
+      "Name":"robert"
+   },
+   {
+      "ShareCount":100,
+      "Balance":11000,
+      "Name":"joker"
+   }
+]

@@ -1,0 +1,20 @@
+[
+   {
+      "Price":100,
+      "Symbol":"@",
+      "Count":43,
+      "NumShare":6
+   },
+   {
+      "Price":200,
+      "Symbol":"#",
+      "Count":8,
+      "NumShare":12
+   },
+   {
+      "Price":150,
+      "Symbol":"!",
+      "Count":53,
+      "NumShare":7
+   }
+]

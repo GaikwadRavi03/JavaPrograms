@@ -37,7 +37,7 @@ public class BinarySearchTree {
 			System.out.println("Enter the Number for BST");
 			n = Utility.inputNumber();
 			for (int i = 1; i <= n; i++) {
-				System.out.println(Utility.numOfBST(i));
+				System.out.println(i + " : " + Utility.numOfBST(i));
 			}
 		} catch (Exception e) {
 			System.out.println("Enetr valid input");

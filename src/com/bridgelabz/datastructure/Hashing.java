@@ -18,7 +18,6 @@ public class Hashing {
 		File f1 = new File("/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/Hashing.txt");
 		FileReader fr = new FileReader(f1);
 		BufferedReader br = new BufferedReader(fr);
-
 		LinkedList<Integer>[] list = new LinkedList[11];
 		int rem = 0;
 
@@ -53,21 +52,20 @@ public class Hashing {
 
 		System.out.print("\n\nEnter the search element");
 		int item = Utility.inputNumber();
-		int j1 = 0;
-		boolean isFoundKey = false;
+		boolean flag = false;
 		int index = 0;
 		for (int i = 0; i < list.length; i++) {
 			rem = item % 11;
 			for (int j = 0; j < list[rem].getListSize(); j++) {
 
 				if (String.valueOf(list[rem].getObject(j)).contentEquals(String.valueOf(item))) {
-					isFoundKey = true;
+					flag = true;
 					index = j;
 					break;
 				}
 			}
 		}
-		if (isFoundKey) {
+		if (flag) {
 			list[rem].DeleteAtPositionHashing(index);
 		} else {
 			list[rem].insertAtLast(item);
@@ -78,7 +76,7 @@ public class Hashing {
 			list[i].printList();
 		}
 		String out = "";
-		System.out.println("\noutput in writer file");
+		System.out.println("\noutput to writer file is: ");
 		for (int i = 0; i < list.length; i++) {
 			list[i].printList();
 			out += list[i].returnListInString();
@@ -89,5 +87,6 @@ public class Hashing {
 		fw.write(out);
 		fw.flush();
 		fw.close();
+		br.close();
 	}
 }
