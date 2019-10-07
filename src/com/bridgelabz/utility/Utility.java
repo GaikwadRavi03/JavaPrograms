@@ -1,5 +1,7 @@
+
 package com.bridgelabz.utility;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -8,16 +10,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.type.TypeReference;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import com.bridgelabz.oops.InventoryFactory;
 import com.bridgelabz.oops.Stock;
 
+@SuppressWarnings("unchecked")
 public class Utility {
 
 	/**
@@ -2116,28 +2127,22 @@ public class Utility {
 		return totalStockValue;
 	}
 
-	@SuppressWarnings("unchecked")
-	public static void JsonFileReadAndWrite() {
+	public static void inventoryManagement() throws JsonParseException, JsonMappingException, IOException {
 		// TODO Auto-generated method stub
-		try {
-			FileReader file = new FileReader(
-					"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/InventoryManagement.json");
-			JSONParser parser = new JSONParser();
-			JSONObject obj = (JSONObject) parser.parse(file);
-			JSONArray jsonarr = (JSONArray) obj.get("inventory");
+		File file = new File(
+				"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/InventoryManagement.json");
+		ObjectMapper mapper = new ObjectMapper();
+		List<InventoryFactory> list = new ArrayList<>();
+		list = mapper.readValue(file, new TypeReference<List<InventoryFactory>>() {
+		});
 
-			jsonarr.stream().forEach(item -> System.out.println(item));
-			jsonarr.stream().forEach(i -> {
-				JSONObject s = (JSONObject) i;
-				int p = ((Long) s.get("Price")).intValue();
-				int w = ((Long) s.get("Weight")).intValue();
-
-				System.out.println("Total Price Of " + s.get("Name") + " " + s.get("type") + " :" + (p * w));
-			});
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println("Name:-" + list.get(i).getName() + " ,Weight;-" + list.get(i).getWeight() + ", Price:-"
+					+ list.get(i).getPrice());
+			int weight = list.get(i).getWeight();
+			int price = list.get(i).getPrice();
+			int total = weight * price;
+			System.out.println("Total Price " + total);
 		}
 	}
 

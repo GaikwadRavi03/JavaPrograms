@@ -5,17 +5,17 @@ public class InventoryFactory {
 	private String type;
 	private String name;
 	private int weight;
-	private int prize;
+	private int price;
 
 	public InventoryFactory() {
 	}
 
-	public InventoryFactory(String type, String name, int weight, int prize) {
+	public InventoryFactory(String type, String name, int weight, int price) {
 		super();
 		this.type = type;
 		this.name = name;
 		this.weight = weight;
-		this.prize = prize;
+		this.price = price;
 	}
 
 	public String getType() {
@@ -42,12 +42,12 @@ public class InventoryFactory {
 		this.weight = weight;
 	}
 
-	public int getPrize() {
-		return prize;
+	public int getPrice() {
+		return price;
 	}
 
-	public void setPrize(int prize) {
-		this.prize = prize;
+	public void setPrice(int prize) {
+		this.price = prize;
 	}
 
 }
