@@ -1,3 +1,8 @@
+/*
+* Created by:Ravi Gaikwad.
+* Date 7/10/2019.
+* Purpose: 4. Inventory Management Program.
+**/
 package com.bridgelabz.oops;
 
 import java.io.IOException;

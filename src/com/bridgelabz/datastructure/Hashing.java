@@ -18,6 +18,7 @@ public class Hashing {
 		File f1 = new File("/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/Hashing.txt");
 		FileReader fr = new FileReader(f1);
 		BufferedReader br = new BufferedReader(fr);
+		@SuppressWarnings("unchecked")
 		LinkedList<Integer>[] list = new LinkedList[11];
 		int rem = 0;
 
@@ -25,6 +26,7 @@ public class Hashing {
 		for (int i = 0; i < 11; i++) {
 			list[i] = new LinkedList<Integer>();
 		}
+		
 		int[] arr1 = new int[11];
 		String str = "";
 		String[] str1 = null;

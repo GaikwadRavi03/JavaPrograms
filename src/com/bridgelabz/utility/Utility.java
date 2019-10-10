@@ -45,7 +45,7 @@ public class Utility {
 	}
 
 	public static String inputString() {
-		return sc.nextLine();
+		return sc.next();
 	}
 
 	public double inputdouble() {

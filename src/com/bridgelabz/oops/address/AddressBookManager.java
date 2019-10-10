@@ -1,4 +1,4 @@
-package com.bridgelabz.oops.addressbook;
+package com.bridgelabz.oops.address;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,16 +8,14 @@ import java.util.List;
 import java.util.Scanner;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
-import com.bridgelabz.utility.Utility;
 
-public class AddressManager {
+public class AddressBookManager {
 
 	List<Person> list = new ArrayList<>();
 	ObjectMapper mapper = new ObjectMapper();
 	String json = "[";
 	private String name;
 	AddressBook address = new AddressBook();
-
 	Scanner sc = new Scanner(System.in);
 
 	public void Create() {
@@ -66,9 +64,6 @@ public class AddressManager {
 						new TypeReference<List<Person>>() {
 						});
 				address.Opeartion(list);
-				// personOperation.Opeartion(list);
-				// System.out.println(list);
-
 			}
 
 			catch (Exception e) {
@@ -90,16 +85,14 @@ public class AddressManager {
 			mapper.writeValue(new File(
 					"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/" + name + ".json"),
 					list);
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		System.out.println("File Saved");
-
 	}
 
 	public void saveAs() {
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter . extension you want");
 		String format = sc.next();
@@ -133,7 +126,6 @@ public class AddressManager {
 
 				b = "\n".getBytes();
 				fos.write(b);
-
 			}
 			fos.close();
 

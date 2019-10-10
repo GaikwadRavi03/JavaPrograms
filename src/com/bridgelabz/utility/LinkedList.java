@@ -191,7 +191,9 @@ public class LinkedList<T> {
 	 * 
 	 * @param num
 	 */
+	@SuppressWarnings("unchecked")
 	public void insertAtSpecificPosition(int num) {
+		@SuppressWarnings("rawtypes")
 		Node<Integer> n = new Node(new Integer(num));
 		if (start == null) {
 			start = (Node<T>) n; // List is empty add newNode

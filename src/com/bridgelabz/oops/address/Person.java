@@ -1,4 +1,4 @@
-package com.bridgelabz.oops.addressbook;
+package com.bridgelabz.oops.address;
 
 public class Person {
 

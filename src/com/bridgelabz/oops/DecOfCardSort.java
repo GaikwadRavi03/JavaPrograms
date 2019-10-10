@@ -1,3 +1,8 @@
+/*
+* Created by:Ravi Gaikwad.
+* Date 7/10/2019.
+* Purpose: 10. Deck Of Cards And Sort.
+**/
 package com.bridgelabz.oops;
 
 import com.bridgelabz.utility.Queue;

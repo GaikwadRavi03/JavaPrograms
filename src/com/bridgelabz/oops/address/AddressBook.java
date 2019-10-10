@@ -1,12 +1,10 @@
-package com.bridgelabz.oops.addressbook;
+package com.bridgelabz.oops.address;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
@@ -45,7 +43,7 @@ public class AddressBook {
 			System.out.println("2.Edit");
 			System.out.println("3.Delete");
 			System.out.println("4.SearchByName");
-			System.out.println("5.SearchByZip");
+			System.out.println("5.S earchByZip");
 			System.out.println("6.sortByName");
 			System.out.println("7.sortByZip");
 			System.out.println("8.print");
@@ -138,8 +136,8 @@ public class AddressBook {
 		String zip = sc.nextLine();
 		address.setState(zip);
 
-		Person tempperson = new Person(firstname, lastname, mobno, new Address(city, zip, state));
-		list.add(tempperson);
+		Person temp = new Person(firstname, lastname, mobno, new Address(city, zip, state));
+		list.add(temp);
 
 		ObjectMapper mapper = new ObjectMapper();
 		String json = "[";
@@ -151,7 +149,7 @@ public class AddressBook {
 			// if the file is empty
 			if (file.length() == 0) {
 
-				json = json + mapper.writeValueAsString(tempperson) + "]";
+				json = json + mapper.writeValueAsString(temp) + "]";
 			}
 
 			{
@@ -164,7 +162,7 @@ public class AddressBook {
 					json = json + array.get(j) + ",";
 					// System.out.println(json);
 				}
-				json = json + mapper.writeValueAsString(tempperson) + "]";
+				json = json + mapper.writeValueAsString(temp) + "]";
 				System.out.println(json);
 
 			}
@@ -186,7 +184,6 @@ public class AddressBook {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public static void editUser() {
@@ -259,13 +256,11 @@ public class AddressBook {
 					}
 				} while (choice1 != 7);
 			}
-
 		}
 
 		if (i > list.size()) {
 			System.out.println("Person Not Exist");
 		}
-
 	}
 
 	// t removes all the elements from the List which satisfies the given Predicate.
@@ -277,9 +272,7 @@ public class AddressBook {
 		int i = 0;
 		for (i = 0; i < list.size(); i++) {
 			Person temp = list.get(i);
-			if (temp.getMobno().equals(deleteMobNo))
-				;
-			{
+			if (temp.getMobno().equals(deleteMobNo)) {
 				list.remove(i);
 			}
 		}
@@ -302,31 +295,46 @@ public class AddressBook {
 		} catch (Exception e) {
 			System.out.println("Name not found");
 		}
-
 	}
 
 	public void sortByName() {
-
 		// sort by name
-		Collections.sort(list, new Comparator<Person>() {
-			@Override
-			public int compare(Person p1, Person p2) {
-				return p1.getFirstname().compareTo(p2.getFirstname());
+		List<Person> listTemp = new ArrayList<>();
+		for (int i = 0; i < list.size(); i++) {
+			listTemp.add(list.get(i));
+		}
+		for (int i = 0; i < listTemp.size() - 1; i++) {
+			for (int j = i + 1; j < listTemp.size(); j++) {
+				if (listTemp.get(i).firstname.compareTo(listTemp.get(j).firstname) > 0) {
+					Person temp1 = listTemp.remove(i);
+					Person temp2 = listTemp.remove(j - 1);
+					listTemp.add(i, temp2);
+					listTemp.add(j, temp1);
+				}
 			}
-		});
-
+		}
+		print(listTemp);
 	}
 
 	public void sortByZip() {
 
-		// sort by name
-		Collections.sort(list, new Comparator<Person>() {
-			@Override
-			public int compare(Person p1, Person p2) {
-				return p1.getAddress().zip.compareTo(p2.getAddress().zip);
-			}
-		});
+		// sort by zip
+		List<Person> listTemp = new ArrayList<>();
+		for (int i = 0; i < list.size(); i++) {
+			listTemp.add(list.get(i));
+		}
 
+		for (int i = 0; i < listTemp.size() - 1; i++) {
+			for (int j = i + 1; j < listTemp.size(); j++) {
+				if (listTemp.get(i).address.zip.compareTo(listTemp.get(j).address.zip) > 0) {
+					Person temp1 = listTemp.remove(i);
+					Person temp2 = listTemp.remove(j - 1);
+					listTemp.add(i, temp2);
+					listTemp.add(j, temp1);
+				}
+			}
+		}
+		print(listTemp);
 	}
 
 	public void searchbyZip() {
@@ -337,12 +345,6 @@ public class AddressBook {
 		try {
 			List<Person> listsearch = (List<Person>) list.stream().filter(i -> i.getAddress().zip.equals(zipname))
 					.collect(Collectors.toList());
-
-			// @SuppressWarnings("unchecked")
-			// List<Person> listsearch=(List<Person>)list.stream()
-			// .filter(i -> i.getAddress().zip.equals(zipname))
-			// .findAny()
-			// .orElse(null);
 
 			System.out.println("FirstName   LastName    Mobile_Number     City     State     Zip   \n");
 			for (int i = 0; i < listsearch.size(); i++) {
@@ -368,5 +370,4 @@ public class AddressBook {
 			System.out.println();
 		}
 	}
-
 }

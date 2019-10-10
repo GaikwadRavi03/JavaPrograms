@@ -1,14 +1,19 @@
-package com.bridgelabz.oops.addressbook;
+/*
+* Created by:Ravi Gaikwad.
+* Date 7/10/2019.
+* Purpose: 8. Address Book Problem ..
+**/
+package com.bridgelabz.oops.address;
 
 import com.bridgelabz.utility.Utility;
 
-public class MainManagerAddressBook {
+public class MainAddressBook {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		AddressManager manager = new AddressManager();
+		AddressBookManager manager = new AddressBookManager();
 
-		System.out.println("************Address Book Problem**************");
+		System.out.println("----------Address Book Problem----------");
 		int ch = 0;
 		do {
 			System.out.println("Choose Option What Do You Want");
