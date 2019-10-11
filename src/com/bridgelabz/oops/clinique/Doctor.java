@@ -1,4 +1,4 @@
-package com.bridgelabz.oops.Clinique;
+package com.bridgelabz.oops.clinique;
 
 public class Doctor {
 
@@ -8,6 +8,20 @@ public class Doctor {
 	String doctorSpecalization;
 	int amCount = 0;
 	int pmCount = 0;
+
+	public Doctor() {
+
+	}
+
+	public Doctor(String doctorId, String doctorName, String doctorAvailibity, String doctorSpecalization) {
+		super();
+		this.doctorId = doctorId;
+		this.doctorName = doctorName;
+		this.doctorAvailibity = doctorAvailibity;
+		this.doctorSpecalization = doctorSpecalization;
+//		this.amCount = amCount;
+//		this.pmCount = pmCount;
+	}
 
 	public int getAmCount() {
 		return amCount;
@@ -23,20 +37,6 @@ public class Doctor {
 
 	public void setPmCount(int pmCount) {
 		this.pmCount = pmCount;
-	}
-
-	public Doctor() {
-
-	}
-
-	public Doctor(String doctorId, String doctorName, String doctorAvailibity, String doctorSpecalization) {
-		this.doctorId = doctorId;
-		this.doctorName = doctorName;
-		this.doctorAvailibity = doctorAvailibity;
-		this.doctorSpecalization = doctorSpecalization;
-		// this.amCount=amCount;
-		// this.pmCount=pmCount;
-
 	}
 
 	public String getDoctorId() {

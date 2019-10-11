@@ -18,6 +18,7 @@ public class AddressBookManager {
 	AddressBook address = new AddressBook();
 	Scanner sc = new Scanner(System.in);
 
+	// Create User.
 	public void Create() {
 		System.out.println("Enter Name Of Address Book");
 		String name = sc.nextLine();
@@ -42,6 +43,7 @@ public class AddressBookManager {
 
 	}
 
+	// Open The User For performing the operations.
 	public void open() {
 
 		File folder = new File("/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files");
@@ -77,6 +79,7 @@ public class AddressBookManager {
 
 	}
 
+	// Save the all data operations in json file.
 	public void save() {
 		System.out.println("Enter File Name We Want to save");
 		String name = sc.nextLine();
@@ -91,6 +94,7 @@ public class AddressBookManager {
 		System.out.println("File Saved");
 	}
 
+	// Save the all operation in file with extension.
 	public void saveAs() {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
@@ -133,5 +137,4 @@ public class AddressBookManager {
 			e.printStackTrace();
 		}
 	}
-
 }

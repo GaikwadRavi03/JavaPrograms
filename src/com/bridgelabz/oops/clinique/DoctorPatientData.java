@@ -1,4 +1,4 @@
-package com.bridgelabz.oops.Clinique;
+package com.bridgelabz.oops.clinique;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -88,11 +88,11 @@ public class DoctorPatientData {
 
 	private void printAppointmentData(List<Appointment> list) {
 		// TODO Auto-generated method stub
-		System.out.println("DrName   DrId  DrAvailibility   PatientId   PatientName   PatientPhone");
+		System.out.println("DrName   DrId   PatientName    PatientId    DrAvailibility       PatientPhone    TimeAndDate");
 		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i).getDoctorName() + "  " + list.get(i).getDoctorId() + "  "
-					+ list.get(i).getAvailibility() + "  " + list.get(i).getPatientId() + " "
-					+ list.get(i).getPatientName() + "  " + list.get(i).getPatientPhone());
+			System.out.println(list.get(i).getDoctorName() + "      " + list.get(i).getDoctorId() + "      "
+					+ list.get(i).getAvailibility() + "            " + list.get(i).getPatientId() + "      "
+					+ list.get(i).getPatientName() + "      " + list.get(i).getPatientPhone() );
 		}
 	}
 }

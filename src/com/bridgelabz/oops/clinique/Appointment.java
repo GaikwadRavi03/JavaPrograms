@@ -1,4 +1,6 @@
-package com.bridgelabz.oops.Clinique;
+package com.bridgelabz.oops.clinique;
+
+import com.bridgelabz.utility.Utility;
 
 public class Appointment {
 
@@ -8,19 +10,29 @@ public class Appointment {
 	String patientId;
 	String Availibility;
 	String patientPhone;
+	String currentDate;
 
 	public Appointment() {
 
 	}
 
-	public Appointment(String doctorId, String doctorName, String patientName, String patientId, String patientPhone,
-			String Availibility) {
+	public Appointment(String doctorName, String doctorId, String patientName, String patientId, String availibility,
+			String patientPhone, String currentDate) {
 		this.doctorName = doctorName;
 		this.doctorId = doctorId;
 		this.patientName = patientName;
 		this.patientId = patientId;
-		this.Availibility = Availibility;
+		Availibility = availibility;
 		this.patientPhone = patientPhone;
+		this.currentDate = currentDate;
+	}
+
+	public String getCurrentDate() {
+		return Utility.currentDateTime();
+	}
+
+	public void setCurrentDate(String currentDate) {
+		this.currentDate = Utility.currentDateTime();
 	}
 
 	public String getDoctorName() {
@@ -70,5 +82,4 @@ public class Appointment {
 	public void setPatientPhone(String patientPhone) {
 		this.patientPhone = patientPhone;
 	}
-
 }

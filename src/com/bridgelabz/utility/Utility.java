@@ -1865,12 +1865,12 @@ public class Utility {
 	 */
 
 	/**
-	 * Purpose : Read And Write in Json file.
+	 * Purpose : Read the Json file and print.
 	 * 
 	 * @throws org.json.simple.parser.ParseException
 	 * @throws ParseException
 	 */
-	@SuppressWarnings("unchecked")
+
 	public static void jsonFileRead() {
 		try {
 			FileReader file = new FileReader(
@@ -1930,7 +1930,7 @@ public class Utility {
 	public static String currentDateTime() {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
-		return dateFormat.format(date); // 2016/11/16 12:08:43
+		return dateFormat.format(date); // 
 	}
 
 	/**
@@ -2037,7 +2037,6 @@ public class Utility {
 				String temp[] = (playercard[i][j] + " ").split(" ");
 				for (int k = 0; k < 13; k++) {
 					if (temp[1].equals(rank[k])) {
-
 						arr[index] = k;
 						index++;
 					}
@@ -2127,6 +2126,13 @@ public class Utility {
 		return totalStockValue;
 	}
 
+	/**
+	 * Purpose : Inventory Management to calculate total price.
+	 * 
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static void inventoryManagement() throws JsonParseException, JsonMappingException, IOException {
 		// TODO Auto-generated method stub
 		File file = new File(
@@ -2146,6 +2152,13 @@ public class Utility {
 		}
 	}
 
+	/**
+	 * Purpose : holding the list of Stocks read from the input file to calculate
+	 *           the value of each stock and the value of total stocks
+	 * 
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 	public static void stockPortPolio() throws IOException, ParseException {
 		// TODO Auto-generated method stub
 

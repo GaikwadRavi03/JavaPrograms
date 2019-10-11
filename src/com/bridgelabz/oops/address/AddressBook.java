@@ -43,7 +43,7 @@ public class AddressBook {
 			System.out.println("2.Edit");
 			System.out.println("3.Delete");
 			System.out.println("4.SearchByName");
-			System.out.println("5.S earchByZip");
+			System.out.println("5.SearchByZip");
 			System.out.println("6.sortByName");
 			System.out.println("7.sortByZip");
 			System.out.println("8.print");
@@ -107,6 +107,7 @@ public class AddressBook {
 
 	}
 
+	//Add person with his details.
 	@SuppressWarnings("resource")
 	public static void addUser() {
 
@@ -186,6 +187,7 @@ public class AddressBook {
 		}
 	}
 
+	// Edit and change the user Data.
 	public static void editUser() {
 		int i = 0;
 		System.out.println("Enter User Edited Name");
@@ -263,8 +265,7 @@ public class AddressBook {
 		}
 	}
 
-	// t removes all the elements from the List which satisfies the given Predicate.
-	// t accepts java 8 Consumer and iterates the list for each element.
+	// Delete the person.
 	public void deleteUser() {
 
 		System.out.println("Enter User by Mobile Number");
@@ -278,6 +279,7 @@ public class AddressBook {
 		}
 	}
 
+	// Search person by his name.
 	public void searchbyName() {
 
 		System.out.println("Enter User Name");
@@ -297,6 +299,7 @@ public class AddressBook {
 		}
 	}
 
+	// Sort persons list by name.
 	public void sortByName() {
 		// sort by name
 		List<Person> listTemp = new ArrayList<>();
@@ -316,6 +319,7 @@ public class AddressBook {
 		print(listTemp);
 	}
 
+	// Sort persons by his zip.
 	public void sortByZip() {
 
 		// sort by zip
@@ -337,6 +341,7 @@ public class AddressBook {
 		print(listTemp);
 	}
 
+	// Search person by his zip.
 	public void searchbyZip() {
 
 		System.out.println("Enter User Zip code");
@@ -357,6 +362,7 @@ public class AddressBook {
 		}
 	}
 
+	// Print all details of person.
 	public void print(List<Person> listdata) {
 		System.out.println("FirstName   LastName    Mobile_Number     City     State     Zip   \n");
 		@SuppressWarnings("unused")

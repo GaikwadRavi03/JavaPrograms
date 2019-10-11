@@ -4,7 +4,7 @@
 * Purpose: 12. Clinique Management Programme.
 **/
 
-package com.bridgelabz.oops.Clinique;
+package com.bridgelabz.oops.clinique;
 
 import com.bridgelabz.utility.Utility;
 

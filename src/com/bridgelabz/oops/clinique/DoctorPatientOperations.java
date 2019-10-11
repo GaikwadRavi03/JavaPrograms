@@ -1,4 +1,4 @@
-package com.bridgelabz.oops.Clinique;
+package com.bridgelabz.oops.clinique;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -14,7 +14,6 @@ import com.bridgelabz.utility.Utility;
 public class DoctorPatientOperations implements DoctorPatientInterface {
 
 	Scanner sc = new Scanner(System.in);
-	// DoctorPatient object=new DoctorPatient();
 	Doctor doctor = new Doctor();
 	Patient patient = new Patient();
 	Appointment app = new Appointment();
@@ -364,12 +363,13 @@ public class DoctorPatientOperations implements DoctorPatientInterface {
 		System.out.println("Enter Patient Mobile");
 		String mobno = sc.nextLine();
 
-		// Doctor temp=doctorlist.get(i);
+		String time = Utility.currentDateTime();
+
 		Doctor temp = (Doctor) doctorlist.stream().filter(i -> i.getDoctorId().equals(id)).collect(Collectors.toList())
 				.get(0);
 		if (temp.getDoctorAvailibity().equals(available)) {
 			if (temp.getDoctorAvailibity().equals("am")) {
-				if (temp.getAmCount() > 5) {
+				if (temp.getAmCount() > 4) {
 					System.out.println("Appointment full");
 				} else {
 					for (int i = 0; i < doctorlist.size(); i++) {
@@ -378,26 +378,24 @@ public class DoctorPatientOperations implements DoctorPatientInterface {
 							doctorlist.get(i).setAmCount(temp1 + 1);
 						}
 					}
+					System.out.println("Appointment Fixed");
 				}
-				System.out.println("Appointment Fixed");
 			}
 		} else
 
 		if (temp.getDoctorAvailibity().equals("pm")) {
-			if (temp.getPmCount() > 5) {
+			if (temp.getPmCount() > 4) {
 				System.out.println("Appointment full");
 			} else {
 				for (int i = 0; i < doctorlist.size(); i++) {
 					if (temp.getDoctorId().equals(id)) {
 						int temp1 = doctorlist.get(i).getPmCount();
 						doctorlist.get(i).setPmCount(temp1 + 1);
-
 					}
 				}
+				System.out.println("Appointment Fixed");
 			}
-			System.out.println("Appointment Fixed");
 		}
-		appointmentlist.add(new Appointment(id, dname, available, patientid, pname, mobno));
-
+		appointmentlist.add(new Appointment(id, dname, available, patientid, pname, mobno, time));
 	}
 }

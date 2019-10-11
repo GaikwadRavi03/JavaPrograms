@@ -1,4 +1,4 @@
-package com.bridgelabz.oops.Clinique;
+package com.bridgelabz.oops.clinique;
 
 import java.io.File;
 import java.util.ArrayList;

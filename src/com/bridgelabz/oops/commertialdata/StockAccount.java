@@ -75,7 +75,7 @@ public class StockAccount {
 				while (itr.hasNext()) { // For comparing user name with stored we have to use the iterate customer.json
 					JSONObject obj = (JSONObject) itr.next();//
 					if (obj.get("Name").equals(name)) {
-						System.out.println("Enter the share sysmbol to buy share:[@.#,!]");
+						System.out.println("Enter the share sysmbol to buy share:[M,T,R]");
 						String sym = Utility.inputString();
 						/*
 						 * obj.put("Share symbol", sym); if(obj.get("Share Symbol").equals(sym)) {
@@ -167,7 +167,7 @@ public class StockAccount {
 				while (itr.hasNext()) {
 					JSONObject obj = (JSONObject) itr.next();
 					if (obj.get("Name").equals(name)) {
-						System.out.println("Enter the share sysmbol to sale share:[@.#,!]");
+						System.out.println("Enter the share sysmbol to sale share:[M,T,R]");
 						String sym = Utility.inputString();
 						System.out.println("Enter the number of share to sale");
 						int count = Utility.inputNumber();

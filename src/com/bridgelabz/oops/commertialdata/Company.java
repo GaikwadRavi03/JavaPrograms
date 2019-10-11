@@ -1,12 +1,25 @@
 package com.bridgelabz.oops.commertialdata;
 
-public class Company {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class Company implements Serializable {
 
 	private String comapnyNo;
 	private String comapnyName;
 	private String comapnySymbol;
 	private String noOfShares;
 	private String sharePrice;
+	private long date;
+
+	public long getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = System.currentTimeMillis();
+	}
+
 	private String totalValue;
 
 	public String getComapnyNo() {
