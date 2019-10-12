@@ -1,3 +1,1 @@
-[{"noOfShares":58,"totalValue":3770,"sharePrice":65,"comapnyNo":101,"comapnySymbol":"M","comapnyName":"Mahindra"},
-{"noOfShares":28,"totalValue":1568,"sharePrice":56,"comapnyNo":102,"comapnySymbol":"T","comapnyName":"TATA"},
-{"noOfShares":65,"totalValue":63570,"sharePrice":978,"comapnyNo":103,"comapnySymbol":"R","comapnyName":"Reliance"}]
+[{"Price":100,"Symbol":"@","Count":108,"NumShare":6},{"Price":200,"Symbol":"#","Count":64,"NumShare":12},{"Price":150,"Symbol":"!","Count":53,"NumShare":7}]

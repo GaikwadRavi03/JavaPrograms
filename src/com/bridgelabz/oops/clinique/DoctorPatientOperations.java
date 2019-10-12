@@ -1,6 +1,8 @@
 package com.bridgelabz.oops.clinique;
 
 import java.io.File;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -354,48 +356,56 @@ public class DoctorPatientOperations implements DoctorPatientInterface {
 		System.out.println("Enter Doctor Availability ");
 		String available = sc.nextLine();
 
-		System.out.println("Enter patient name ");
-		String pname = sc.nextLine();
-
 		System.out.println("Enter Patient Id");
 		String patientid = sc.nextLine();
+
+		System.out.println("Enter patient name ");
+		String pname = sc.nextLine();
 
 		System.out.println("Enter Patient Mobile");
 		String mobno = sc.nextLine();
 
-		String time = Utility.currentDateTime();
-
-		Doctor temp = (Doctor) doctorlist.stream().filter(i -> i.getDoctorId().equals(id)).collect(Collectors.toList())
-				.get(0);
-		if (temp.getDoctorAvailibity().equals(available)) {
-			if (temp.getDoctorAvailibity().equals("am")) {
-				if (temp.getAmCount() > 4) {
+		
+//		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		LocalDateTime dateTimeNow = LocalDateTime.now();
+//		LocalDateTime tomorrow = dateTimeNow.plusDays(1);
+		String time = dateTimeNow.toString();
+		
+		try {
+			Doctor temp = (Doctor) doctorlist.stream().filter(i -> i.getDoctorId().equals(id))
+					.collect(Collectors.toList()).get(0);
+			if (temp.getDoctorAvailibity().equals(available)) {
+				if (temp.getDoctorAvailibity().equals("am")) {
+					if (temp.getAmCount() > 4) {
+						System.out.println("Appointment full");
+						return;
+					} else {
+						for (int i = 0; i < doctorlist.size(); i++) {
+							if (temp.getDoctorId().equals(id)) {
+								int temp1 = doctorlist.get(i).getAmCount();
+								doctorlist.get(i).setAmCount(temp1 + 1);
+							}
+						}
+					}
+				}
+			} else if (temp.getDoctorAvailibity().equals("pm")) {
+				if (temp.getPmCount() > 4) {
 					System.out.println("Appointment full");
+					return;
 				} else {
 					for (int i = 0; i < doctorlist.size(); i++) {
 						if (temp.getDoctorId().equals(id)) {
-							int temp1 = doctorlist.get(i).getAmCount();
-							doctorlist.get(i).setAmCount(temp1 + 1);
+							int temp1 = doctorlist.get(i).getPmCount();
+							doctorlist.get(i).setPmCount(temp1 + 1);
 						}
 					}
-					System.out.println("Appointment Fixed");
 				}
 			}
-		} else
-
-		if (temp.getDoctorAvailibity().equals("pm")) {
-			if (temp.getPmCount() > 4) {
-				System.out.println("Appointment full");
-			} else {
-				for (int i = 0; i < doctorlist.size(); i++) {
-					if (temp.getDoctorId().equals(id)) {
-						int temp1 = doctorlist.get(i).getPmCount();
-						doctorlist.get(i).setPmCount(temp1 + 1);
-					}
-				}
-				System.out.println("Appointment Fixed");
-			}
+			System.out.println("Appointment Fixed");
+			appointmentlist.add(new Appointment(id, dname, available, patientid, pname, mobno, time));
+		} catch (Exception e) {
+			System.out.println("Doctor not found !!");
 		}
-		appointmentlist.add(new Appointment(id, dname, available, patientid, pname, mobno, time));
 	}
 }

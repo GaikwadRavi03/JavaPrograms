@@ -14,7 +14,6 @@ public class Doctor {
 	}
 
 	public Doctor(String doctorId, String doctorName, String doctorAvailibity, String doctorSpecalization) {
-		super();
 		this.doctorId = doctorId;
 		this.doctorName = doctorName;
 		this.doctorAvailibity = doctorAvailibity;

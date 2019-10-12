@@ -107,7 +107,7 @@ public class AddressBook {
 
 	}
 
-	//Add person with his details.
+	// Add person with his details.
 	@SuppressWarnings("resource")
 	public static void addUser() {
 
@@ -306,6 +306,7 @@ public class AddressBook {
 		for (int i = 0; i < list.size(); i++) {
 			listTemp.add(list.get(i));
 		}
+
 		for (int i = 0; i < listTemp.size() - 1; i++) {
 			for (int j = i + 1; j < listTemp.size(); j++) {
 				if (listTemp.get(i).firstname.compareTo(listTemp.get(j).firstname) > 0) {
@@ -330,7 +331,8 @@ public class AddressBook {
 
 		for (int i = 0; i < listTemp.size() - 1; i++) {
 			for (int j = i + 1; j < listTemp.size(); j++) {
-				if (listTemp.get(i).address.zip.compareTo(listTemp.get(j).address.zip) > 0) {
+
+				if (listTemp.get(i).address.state.compareTo(listTemp.get(i + 1).address.state) > 0) {
 					Person temp1 = listTemp.remove(i);
 					Person temp2 = listTemp.remove(j - 1);
 					listTemp.add(i, temp2);
@@ -364,7 +366,7 @@ public class AddressBook {
 
 	// Print all details of person.
 	public void print(List<Person> listdata) {
-		System.out.println("FirstName   LastName    Mobile_Number     City     State     Zip   \n");
+		System.out.println("FirstName   LastName    Mobile_Number     Zip       City     State        \n");
 		@SuppressWarnings("unused")
 		String spaces = " ";
 		for (int i = 0; i < listdata.size(); i++) {

@@ -1,4 +1,0 @@
-FirstName   LastName    City        State       Zip         PhoneNumber 
-ravi        gaikwad     9158        mumbai      410         mh          
-raj         roy         1234        pune        520         mh          
-jasprit     sir         963         mumbai      350         mh          

@@ -1,7 +1,5 @@
 package com.bridgelabz.oops.clinique;
 
-import com.bridgelabz.utility.Utility;
-
 public class Appointment {
 
 	String doctorName;
@@ -28,11 +26,11 @@ public class Appointment {
 	}
 
 	public String getCurrentDate() {
-		return Utility.currentDateTime();
+		return currentDate;
 	}
 
 	public void setCurrentDate(String currentDate) {
-		this.currentDate = Utility.currentDateTime();
+		this.currentDate = currentDate;
 	}
 
 	public String getDoctorName() {
