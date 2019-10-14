@@ -146,7 +146,6 @@ public class AddressBook {
 		try {
 			File file = new File(
 					"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/person.json");
-
 			// if the file is empty
 			if (file.length() == 0) {
 
