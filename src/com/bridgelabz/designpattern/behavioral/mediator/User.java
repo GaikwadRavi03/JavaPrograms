@@ -4,6 +4,7 @@ public abstract class User {
 	protected ChatMediator mediator;
 	protected String name;
 
+	// Parameterized constructor.
 	public User(ChatMediator med, String name) {
 		this.mediator = med;
 		this.name = name;

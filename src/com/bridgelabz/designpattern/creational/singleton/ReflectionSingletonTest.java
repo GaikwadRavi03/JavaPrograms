@@ -4,6 +4,7 @@ import java.lang.reflect.Constructor;
 
 public class ReflectionSingletonTest {
 
+	@SuppressWarnings("rawtypes")
 	public static void main(String[] args) {
 		EagerInitializedSingleton instanceOne = EagerInitializedSingleton.getInstance();
 		EagerInitializedSingleton instanceTwo = null;

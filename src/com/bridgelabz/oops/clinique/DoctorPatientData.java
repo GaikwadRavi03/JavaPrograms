@@ -71,8 +71,8 @@ public class DoctorPatientData {
 	}
 
 	public void printDoctorData(List<Doctor> list) {
-		System.out.println("ID       Name            Availability            Specialization   amCount   pmCount ");
 		for (int i = 0; i < list.size(); i++) {
+			System.out.println("ID       Name            Availability            Specialization   amCount   pmCount ");
 			System.out.println(list.get(i).getDoctorId() + "  " + list.get(i).getDoctorName() + "       "
 					+ list.get(i).getDoctorAvailibity() + "       " + list.get(i).getDoctorSpecalization() + "       "
 					+ list.get(i).getAmCount() + "       " + list.get(i).getPmCount());

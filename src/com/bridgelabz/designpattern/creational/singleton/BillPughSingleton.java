@@ -9,6 +9,7 @@ public class BillPughSingleton {
 		private static final BillPughSingleton INSTANCE = new BillPughSingleton();
 	}
 
+	// Inner static class contains instance of singleton class.
 	public static BillPughSingleton getInstance() {
 		return SingletonHelper.INSTANCE;
 	}

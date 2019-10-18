@@ -1,7 +1,7 @@
 package com.bridgelabz.designpattern.behavioral.mediator;
 
 public class ChatClient {
-
+	
 	public static void main(String[] args) {
 		ChatMediator mediator = new ChatMediatorImpl();
 		User user1 = new UserImpl(mediator, "Pankaj");

@@ -11,11 +11,13 @@ public class ChatMediatorImpl implements ChatMediator {
 		this.users = new ArrayList<>();
 	}
 
+	// Add Users.
 	@Override
 	public void addUser(User user) {
 		this.users.add(user);
 	}
 
+	// Send Messages.
 	@Override
 	public void sendMessage(String msg, User user) {
 		for (User u : this.users) {

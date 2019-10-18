@@ -3,11 +3,12 @@ package com.bridgelabz.designpattern.structural.adapter;
 public class AdapterPatternTest {
 
 	public static void main(String[] args) {
-	
-		testClassAdapter();
-		testObjectAdapter();
+
+		testClassAdapter(); // Fun Call for testClassAdapter.
+		testObjectAdapter(); // Fun Call for testObjectAdapter.
 	}
 
+	// Body of testObjectAdapter fun.
 	private static void testObjectAdapter() {
 		SocketAdapter sockAdapter = new SocketObjectAdapterImpl();
 		Volt v3 = getVolt(sockAdapter, 3);
@@ -18,6 +19,7 @@ public class AdapterPatternTest {
 		System.out.println("v120 volts using Object Adapter=" + v120.getVolts());
 	}
 
+	// Body of testClassAdapter fun.
 	private static void testClassAdapter() {
 		SocketAdapter sockAdapter = new SocketClassAdapterImpl();
 		Volt v3 = getVolt(sockAdapter, 3);

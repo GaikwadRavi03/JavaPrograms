@@ -5,6 +5,7 @@ public class ShapeMaker {
 	private Shape rectangle;
 	private Shape square;
 
+	// Create objects.
 	public ShapeMaker() {
 		circle = new Circle();
 		rectangle = new Rectangle();
