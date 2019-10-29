@@ -11,7 +11,7 @@ public class RangeOf1000PrimeNumbers {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Utility.printPrimenumber();
 
+		Utility.printPrimenumber();// Fun call
 	}
 }

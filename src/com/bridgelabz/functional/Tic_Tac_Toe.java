@@ -10,15 +10,13 @@ import com.bridgelabz.utility.Utility;
 public class Tic_Tac_Toe {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Utility u1 = new Utility();
 		System.out.println("Tic Tac Toe Game");
 		System.out.println("player1 is computer :O");
 		// accept the name of player 2
 
 		System.out.println("Enter name of player2 ");
 		// store the name of player 2
-		String name = u1.inputString();
+		String name = Utility.inputString();
 		// calling this method to play game tictacteo
 		Utility.gameTictactoe(name); // function call.
 	}

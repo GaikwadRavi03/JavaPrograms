@@ -18,16 +18,16 @@ public class MergeSort_String {
 			String str[] = new String[m];
 			System.out.println("enter strings in array");// store varibale in string array
 			for (int i = 0; i < str.length; i++) {
-				str[i] = u1.inputString();
+				str[i] = Utility.inputString();
 			}
-			System.out.println("Before list is:");
+			System.out.println("Before merge sort list is:");
 			for (String i : str) {
 				System.out.print(i + " ");
 			}
 			// function call for merge sorting.
 			u1.mergeSort(str, 0, str.length - 1);
 
-			System.out.println("Before list is:");
+			System.out.println("after merge sort list is:");
 			for (String i : str) {
 				System.out.print(i + " ");
 			}

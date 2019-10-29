@@ -14,7 +14,6 @@ import com.bridgelabz.utility.Utility;
 
 public class BinarySearchWordFromFile {
 	public static void main(String[] args) throws IOException {
-		Utility u1 = new Utility();
 		File f1 = new File(
 				"/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/BinarySearchWordFromFile.txt");
 		// Creation of File Descriptor for input file
@@ -23,7 +22,7 @@ public class BinarySearchWordFromFile {
 		BufferedReader br = new BufferedReader(fr); // Creation of BufferedReader object
 		String s;
 		System.out.println("enter the word do u want to search:");
-		String input = u1.inputString(); // Input word to be searched
+		String input = Utility.inputString(); // Input word to be searched
 		int count = 0; // Intialize the word to zero
 		while ((s = br.readLine()) != null) // Reading Content from the file
 		{

@@ -17,7 +17,7 @@ public class InsertionSortWord {
 			String[] str = new String[m];
 			System.out.println("enter the strings:");
 			for (int i = 0; i <= str.length - 1; i++) {
-				str[i] = u1.inputString();
+				str[i] = Utility.inputString();
 			}
 			System.out.println("before the insertion sort:");
 			for (int i = 0; i < str.length; i++) {

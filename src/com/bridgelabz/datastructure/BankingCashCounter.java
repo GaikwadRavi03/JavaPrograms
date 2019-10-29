@@ -11,7 +11,8 @@ public class BankingCashCounter {
 
 	public static void main(String[] args) {
 
-		int currentBalance = Utility.simulateBanking();
+		int currentBalance = Utility.simulateBanking();// fun call
+
 		System.out.println("Current Balance = " + currentBalance);
 	}
 }

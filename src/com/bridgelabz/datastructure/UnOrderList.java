@@ -19,7 +19,6 @@ public class UnOrderList {
 
 	public static void main(String[] args) throws IOException {
 
-		Utility u1 = new Utility();
 		LinkedList<String> list = new LinkedList<String>();
 		File f1 = new File("/home/admin1/eclipse-workspace/BridgeLabzPrograms/src/com/bridgelabz/files/unSorted.txt");
 		// input file
@@ -37,7 +36,7 @@ public class UnOrderList {
 			list.printList(); // print file data
 		}
 		System.out.println("\nenter search item:");
-		String item = u1.inputString();
+		String item = Utility.inputString();
 
 		boolean flag = false;
 		for (int i = 0; i < words.length; i++) {

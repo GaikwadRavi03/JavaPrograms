@@ -95,7 +95,7 @@ public class SortingSearchingTime {
 		}
 		u1.bubbleSortIntegerDesending(brr); // Function call for descending order
 
-		System.out.println("\nAll method sorting in order is:");
+		System.out.println("\nAll method sorting in Desending order is:");
 		for (int i = 0; i < brr.length; i++) {
 			System.out.print(brr[i] + " ");
 		}

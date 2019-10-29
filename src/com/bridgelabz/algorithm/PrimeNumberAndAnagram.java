@@ -8,7 +8,9 @@ package com.bridgelabz.algorithm;
 import com.bridgelabz.utility.Utility;
 
 public class PrimeNumberAndAnagram {
+
 	public static void main(String[] args) {
+
 		Utility.primeAnagram();// function call for check prime and anagram.
 	}
 }

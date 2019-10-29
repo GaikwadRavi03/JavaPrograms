@@ -13,8 +13,8 @@ public class Anagram {
 		// TODO Auto-generated method stub
 		System.out.println("enter the two strings");
 		// string1 and string2 takes from user
-		String str1 = u1.inputString();
-		String str2 = u1.inputString();
+		String str1 = Utility.inputString();
+		String str2 = Utility.inputString();
 		u1.isAnagram(str1, str2);// function call.
 	}
 }// class ends here.

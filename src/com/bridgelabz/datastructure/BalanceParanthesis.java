@@ -12,7 +12,7 @@ public class BalanceParanthesis {
 		// TODO Auto-generated method stub
 		Utility u1 = new Utility();
 		System.out.println("enter the expression:");
-		String str = u1.inputString();// give expression from user.
+		String str = Utility.inputString();// give expression from user.
 		u1.simpleBalanceParenthesis(str);// function call.
 	}
 }

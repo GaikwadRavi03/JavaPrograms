@@ -182,7 +182,7 @@ public class Utility {
 	public static void TwoD_ArrayForInteger() {
 		// TODO Auto-generated method stub
 		int arr[][] = new int[3][3];
-		System.out.println("enter the integers");
+		System.out.println("enter the numbers");
 		// Integer numbers store in two D array
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
@@ -201,7 +201,7 @@ public class Utility {
 	public static void TwoD_ArrayForDouble() {
 		// TODO Auto-generated method stub
 		double drr[][] = new double[3][3];
-		System.out.println("enter the decimal integers");
+		System.out.println("enter the decimal numbers");
 		// numbers store in two D array
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
@@ -220,7 +220,7 @@ public class Utility {
 	public static void TwoD_ArrayForBoolean() {
 		// TODO Auto-generated method stub
 		String str[][] = new String[3][3];
-		System.out.println("enter the string");
+		System.out.println("enter the booleans");
 		// store in two D array
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {

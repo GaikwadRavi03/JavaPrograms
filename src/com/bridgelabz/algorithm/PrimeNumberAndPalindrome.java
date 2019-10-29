@@ -8,7 +8,9 @@ package com.bridgelabz.algorithm;
 import com.bridgelabz.utility.Utility;
 
 public class PrimeNumberAndPalindrome {
+
 	public static void main(String[] args) throws Exception {
+
 		Utility.primePalindrome();// call prime palindrome function.
 	}
 }

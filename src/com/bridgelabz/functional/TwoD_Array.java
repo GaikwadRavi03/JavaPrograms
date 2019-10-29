@@ -14,23 +14,27 @@ public class TwoD_Array {
 		int choice;
 		System.out.println("1.integer\n2.Double\n3.Boolean");
 		System.out.println("enetr choice for above operations");
-		choice = Utility.inputNumber();
-		switch (choice) {
-		case 1:
-			Utility.TwoD_ArrayForInteger(); // function call for Integer.
-			break;
+		try {
+			choice = Utility.inputNumber();
+			switch (choice) {
+			case 1:
+				Utility.TwoD_ArrayForInteger(); // function call for Integer.
+				break;
 
-		case 2:
-			Utility.TwoD_ArrayForDouble(); // function call for Double.
-			break;
+			case 2:
+				Utility.TwoD_ArrayForDouble(); // function call for Double.
+				break;
 
-		case 3:
-			Utility.TwoD_ArrayForBoolean(); // function call for Boolean.
-			break;
+			case 3:
+				Utility.TwoD_ArrayForBoolean(); // function call for Boolean.
+				break;
 
-		default:
-			System.out.println("enter invalid choice:");
-			break;
+			default:
+				System.out.println("enter invalid choice:");
+				break;
+			}
+		} catch (Exception e) {
+			System.out.println("Invalid input");
 		}
 	}
 }

@@ -11,11 +11,8 @@ import com.bridgelabz.utility.Utility;
 public class PalindromeChecker {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Utility u1 = new Utility();
-
 		System.out.println("Enter the string for check palindrome");
-		String str = u1.inputString();
+		String str = Utility.inputString();
 
 		boolean b = Utility.palindromeChecker(str);
 		if (b) {

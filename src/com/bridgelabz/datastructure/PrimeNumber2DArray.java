@@ -10,6 +10,7 @@ import com.bridgelabz.utility.Utility;
 public class PrimeNumber2DArray {
 
 	public static void main(String[] args) {
-		Utility.print2DArrayPrimeInrange();
+
+		Utility.print2DArrayPrimeInrange();// fun call
 	}
 }
